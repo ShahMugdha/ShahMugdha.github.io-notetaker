@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<title>NotesHere</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-color: rgb(250, 241, 224);
+            padding:2px;
+            margin:1px;
+        }
+        #add{
+            background-color:transparent;
+            position:fixed;
+            left:87%; top: 93%;
+        }
+        .textbox{
+            background-color: rgb(146, 201, 226);
+            position: absolute;
+            left:5%;
+            width:30%;
+            height:30%;
+            color:black;
+        }
+        #clear{
+            position: absolute;
+            top:9%; left:25%;
+        }
+      
+    </style>
+</head>
+<body>
+    <h1>YOUR NOTES HERE</h1>
+    <button id="add" class="material-icons" style="font-size:40px;" onclick="dropup()" >add_circle</button>
+    <div id="text"></div>
+    <script>
+        function dropup(){
+            var a=document.getElementById("text");
+            
+            a.innerHTML="<textarea class='textbox'></textarea> <button id='clear'class='material-icons'>clear</button>";
+            document.getElementById("clear").addEventListener("click",clear);
+            document.getElementById("text").appendChild(a);
+        }
+        function clear(){
+            document.getElementById("text").style.display="none";
+            document.getElementById("clear").style.display="none";
+           
+        }
+    </script>      
+</body>
+</html>
